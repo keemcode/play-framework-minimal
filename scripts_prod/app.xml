@@ -1,0 +1,18 @@
+<service>
+    <id>tamsyv2</id>
+    <name>tamsyv2</name>
+    <description>This service runs NCC SSO.</description>
+    <env name="API_SERVER_URL" value="https://xxxxx/api-server"/>
+    <env name="API_MAIN_DOMAIN" value="xxxxx/"/>
+    <env name="APP_SERVER_URL" value="https://xxxxx/"/>
+    <env name="IDENTITY_APP_SIGN_UP_URL" value="https://xxxxx/#/user/register"/>
+    <env name="IDENTITY_APP_LOGIN_URL" value="https://xxxxx/#/user/login"/>
+    <env name="IDENTITY_APP_ACCOUNT_URL" value="https://xxxxx/#/user/account"/>
+    <env name="MAIN_APP_LOGIN_URL" value="https://xxxxx/#/redirect"/>
+
+    <env name="JAVA_HOME" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot"/>
+    <onfailure action="restart" delay="30 sec"/>
+    <executable>%BASE%\service-gateway-1.0\start.bat</executable>
+    <arguments>-Dconfig.resource production.conf -Dhttp.port=90xx</arguments>
+    <logmode>rotate</logmode>
+</service>

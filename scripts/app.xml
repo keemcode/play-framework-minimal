@@ -1,0 +1,18 @@
+<service>
+    <id>tamsyv2</id>
+    <name>tamsyv2</name>
+    <description>This service runs tamsyv2.</description>
+
+    <env name="API_SERVER_URL" value="http://tamsy2.showcase.com.ng/api-server"/>
+    <env name="API_MAIN_DOMAIN" value="tamsy2.showcase.com.ng/"/>
+    <env name="APP_SERVER_URL" value="http://tamsy2.showcase.com.ng/"/>
+
+    <env name="SSO_API_KEY" value="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHBsaWNhdGlvbklkIjoiZTA2NzZiOGYtODA5My00NTE5LTllZGUtMmFjNTBlZDk3NGY0IiwiZXhwIjozNzYwNjE0ODk2LCJpYXQiOjE2MTMxMzEyNDksInVzZXJuYW1lIjoiY2RiMzBlNDQtYTE2NC00M2Q2LWE2YmQtYTNhNGZkZDQ2MTgwIn0.UTocfp2SCPwEketmzZZ7DpCeqYtlARrLFvPoB3XNK0w"/>
+    <env name="SSO_API_SERVER" value="http://apps.showcase.com.ng/api-server"/>
+
+    <env name="JAVA_HOME" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot"/>
+    <onfailure action="restart" delay="30 sec"/>
+    <executable>%BASE%\service-gateway-1.0\start.bat</executable>
+    <arguments>-Xmx4g -Dconfig.resource=staging.conf -Dhttp.port=9077 -Dlogger.resource=logback-prod.xml</arguments>
+    <logmode>rotate</logmode>
+</service>

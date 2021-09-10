@@ -1,0 +1,19 @@
+#swagger
+GET            /api-docs.json                                                  controllers.ApiHelpController.getResources
+GET            /api-docs.json/auth                                             controllers.ApiHelpController.getResource(path = "/auth")
+GET            /api-server/api-docs.json                                       controllers.ApiHelpController.getResources
+GET            /api-server/api-docs.json/auth                                  controllers.ApiHelpController.getResource(path = "/auth")
+# Map static resources from the /public folder to the /assets URL path
+GET            /api-server/assets/*file                                        controllers.Assets.at(path="/public", file)
+GET            /assets/*file                                                   controllers.Assets.at(path="/public", file)
+GET            /                                                               controllers.HomeController.index
+
+OPTIONS        /*all                                                           controllers.HomeController.preflight(all)
+
+
+GET            /docs                                                           controllers.HomeController.swagger()
+GET            /api-server/error                                               controllers.HomeController.error()
+GET            /api-server/error/                                              controllers.HomeController.error()
+GET            /error                                                          controllers.HomeController.error()
+GET            /error/                                                         controllers.HomeController.error()
+GET            /api-docs                                                       controllers.HomeController.api()
